@@ -12,12 +12,12 @@ public class Result implements Parcelable {
     @SerializedName("genre")
     @Expose
     private List<String> genre;
-    @SerializedName("imageUrl")
+    @SerializedName("imageurl")
     @Expose
-    private List<String> imageUrl;
-    @SerializedName("imdbId")
+    private List<String> imageurl;
+    @SerializedName("imdbid")
     @Expose
-    private String imdbId;
+    private String imdbid;
     @SerializedName("imdbrating")
     @Expose
     private Double imdbRating;
@@ -51,8 +51,8 @@ public class Result implements Parcelable {
     })
     protected Result(android.os.Parcel in) {
         in.readList(this.genre, (java.lang.String.class.getClassLoader()));
-        in.readList(this.imageUrl, (java.lang.String.class.getClassLoader()));
-        this.imdbId = ((String) in.readValue((String.class.getClassLoader())));
+        in.readList(this.imageurl, (java.lang.String.class.getClassLoader()));
+        this.imdbid = ((String) in.readValue((String.class.getClassLoader())));
         this.imdbRating = ((Double) in.readValue((Double.class.getClassLoader())));
         this.released = ((Integer) in.readValue((Integer.class.getClassLoader())));
         this.synopsis = ((String) in.readValue((String.class.getClassLoader())));
@@ -71,20 +71,20 @@ public class Result implements Parcelable {
         this.genre = genre;
     }
 
-    public List<String> getImageUrl() {
-        return imageUrl;
+    public List<String> getImageurl() {
+        return imageurl;
     }
 
-    public void setImageUrl(List<String> imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImageurl(List<String> imageurl) {
+        this.imageurl = imageurl;
     }
 
-    public String getImdbId() {
-        return imdbId;
+    public String getImdbid() {
+        return imdbid;
     }
 
-    public void setImdbId(String imdbId) {
-        this.imdbId = imdbId;
+    public void setImdbid(String imdbid) {
+        this.imdbid = imdbid;
     }
 
     public Double getImdbRating() {
@@ -129,8 +129,8 @@ public class Result implements Parcelable {
 
     public void writeToParcel(android.os.Parcel dest, int flags) {
         dest.writeList(genre);
-        dest.writeList(imageUrl);
-        dest.writeValue(imdbId);
+        dest.writeList(imageurl);
+        dest.writeValue(imdbid);
         dest.writeValue(imdbRating);
         dest.writeValue(released);
         dest.writeValue(synopsis);
