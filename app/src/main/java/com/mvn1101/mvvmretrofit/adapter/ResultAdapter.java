@@ -39,7 +39,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
     public void onBindViewHolder(@NonNull ResultViewHolder holder, int position) {
 
         holder.titleTextView.setText(results.get(position).getTitle());
-        holder.imdbRating.setText(results.get(position).getImdbid());
+        holder.imdbRating.setText("IMDB: " + results.get(position).getImdbRating().toString());
         String imagePath;
         if (results.get(position).getImageurl().size() <= 0) {
 
@@ -48,7 +48,10 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
             imagePath = results.get(position).getImageurl().get(0);
         }
 
-        Glide.with(context).load(imagePath).into(holder.movieImageView);
+        Glide.with(context)
+                .load(imagePath)
+                .placeholder(R.drawable.progress_circle)
+                .into(holder.movieImageView);
 
 
 

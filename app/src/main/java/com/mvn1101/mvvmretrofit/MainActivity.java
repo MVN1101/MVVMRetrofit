@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<Result> results;
     private RecyclerView recyclerView;
     private ResultAdapter adapter;
+    private SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         getMovies();
+
+        swipeRefreshLayout = findViewById(R.id.swiperefresh);
+        swipeRefreshLayout.setColorSchemeColors(R.color.purple_500);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getMovies();
+            }
+        });
     }
 
     public void getMovies (){
@@ -50,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 if (movieApiResponse != null && movieApiResponse.getResults() != null) {
                     results = (ArrayList<Result>) movieApiResponse.getResults();
                     fillRecyclerView();
+                    swipeRefreshLayout.setRefreshing(false);
                 }
             }
 

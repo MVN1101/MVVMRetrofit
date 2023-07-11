@@ -24,7 +24,7 @@
         <TextView
             android:id="@+id/titleTextView"
             android:layout_below="@+id/movieImageView"
-            android:textSize="32sp"
+            android:textSize="28sp"
             android:textStyle="bold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
@@ -32,8 +32,8 @@
         <TextView
             android:id="@+id/imdbRatingTextView"
             android:layout_below="@+id/titleTextView"
-            android:textSize="32sp"
-            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textStyle="italic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     </RelativeLayout>
