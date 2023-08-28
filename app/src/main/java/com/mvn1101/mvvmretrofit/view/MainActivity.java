@@ -1,4 +1,4 @@
-package com.mvn1101.mvvmretrofit;
+package com.mvn1101.mvvmretrofit.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.telecom.Conference;
 import android.widget.ArrayAdapter;
 
+import com.mvn1101.mvvmretrofit.R;
 import com.mvn1101.mvvmretrofit.adapter.ResultAdapter;
 import com.mvn1101.mvvmretrofit.model.MovieApiResponse;
 import com.mvn1101.mvvmretrofit.model.Result;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         getMovies();
 
         swipeRefreshLayout = findViewById(R.id.swiperefresh);
-        swipeRefreshLayout.setColorSchemeColors(R.color.purple_500);
+        swipeRefreshLayout.setColorSchemeResources(R.color.purple_700);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -90,3 +91,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
+// I'm back
