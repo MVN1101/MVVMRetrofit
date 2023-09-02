@@ -19,15 +19,15 @@ public class MovieDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie_details);
 
         Intent intent = getIntent();
-        result = intent.getParcelableExtra("movieDetails");
+//        result = intent.getParcelableExtra("movieDetails");
 
-//        if (intent != null && intent.hasExtra("movieDetails")) {
-//
-//            result = intent.getParcelableExtra("movieDetails");
-//
-////            Toast.makeText(this, result.getTitle(), Toast.LENGTH_LONG).show();
-//
-//        }
+        if (intent != null && intent.hasExtra("movieDetails")) {
+
+            result = intent.getParcelableExtra("movieDetails");
+
+            Toast.makeText(this, result.getTitle(), Toast.LENGTH_LONG).show();
+
+        }
 
     }
 }
