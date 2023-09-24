@@ -33,7 +33,7 @@ public class Result implements Parcelable {
     @SerializedName("type")
     @Expose
     private String type;
-    public final static Creator<Result> CREATOR = new Creator<Result>() {
+    public final static Parcelable.Creator<Result> CREATOR = new Creator<Result>() {
 
 
         public Result createFromParcel(android.os.Parcel in) {

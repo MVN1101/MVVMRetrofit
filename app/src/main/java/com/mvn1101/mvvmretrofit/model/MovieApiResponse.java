@@ -17,7 +17,7 @@ public class MovieApiResponse implements Parcelable {
     @SerializedName("results")
     @Expose
     private List<Result> results;
-    public final static Creator<MovieApiResponse> CREATOR = new Creator<MovieApiResponse>() {
+    public final static Parcelable.Creator<MovieApiResponse> CREATOR = new Creator<MovieApiResponse>() {
 
 
         public MovieApiResponse createFromParcel(android.os.Parcel in) {
