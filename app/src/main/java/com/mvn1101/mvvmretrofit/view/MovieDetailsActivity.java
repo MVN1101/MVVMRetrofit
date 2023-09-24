@@ -19,15 +19,24 @@ public class MovieDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie_details);
 
         Intent intent = getIntent();
-//        result = intent.getParcelableExtra("movieDetails");
+        result = intent.getParcelableExtra("movieDetails");
 
-        if (intent != null && intent.hasExtra("movieDetails")) {
+//        if (intent != null && intent.hasExtra("movieDetails")) {
+//        if (intent == null) {
 
-            result = intent.getParcelableExtra("movieDetails");
+//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+//                result = intent.getParcelableExtra("movieDetails", Result.class);
+//            }
+        Toast.makeText(this, "result.getImdbid()", Toast.LENGTH_LONG).show();
+//            String s = intent.getStringExtra("movieDetails");
+//            Toast.makeText(this, s , Toast.LENGTH_LONG).show();
+//
+//            Toast.makeText(this, "Intent null", Toast.LENGTH_LONG).show();
 
-            Toast.makeText(this, result.getTitle(), Toast.LENGTH_LONG).show();
-
-        }
-
+//        } else {
+//            Toast.makeText(this, "Intent not null", Toast.LENGTH_LONG).show();
+//        }
     }
+
+
 }
