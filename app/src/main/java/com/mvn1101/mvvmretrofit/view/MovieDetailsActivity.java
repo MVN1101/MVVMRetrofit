@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mvn1101.mvvmretrofit.R;
@@ -18,8 +19,8 @@ public class MovieDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
-        Intent intent = getIntent();
-        result = intent.getParcelableExtra("movieDetails");
+        Bundle arguments =getIntent().getExtras();
+        result = (Result) arguments.getSerializable("movieDetails");
 
 //        if (intent != null && intent.hasExtra("movieDetails")) {
 //        if (intent == null) {
@@ -27,7 +28,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 //            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
 //                result = intent.getParcelableExtra("movieDetails", Result.class);
 //            }
-        Toast.makeText(this, "result.getImdbid()", Toast.LENGTH_LONG).show();
+        Toast.makeText(this, result.getImdbid(), Toast.LENGTH_LONG).show();
 //            String s = intent.getStringExtra("movieDetails");
 //            Toast.makeText(this, s , Toast.LENGTH_LONG).show();
 //
