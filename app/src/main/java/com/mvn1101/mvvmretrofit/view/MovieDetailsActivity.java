@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.mvn1101.mvvmretrofit.R;
@@ -18,16 +19,15 @@ public class MovieDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
-        Intent intent = getIntent();
-//        result = intent.getParcelableExtra("movieDetails");
+        Bundle arguments = getIntent().getExtras();
 
-        if (intent != null && intent.hasExtra("movieDetails")) {
 
-            result = intent.getParcelableExtra("movieDetails");
-
+        if (arguments != null) {
+            result = (Result) arguments.getSerializable("movieDetails");
             Toast.makeText(this, result.getTitle(), Toast.LENGTH_LONG).show();
-
         }
 
     }
+
+
 }

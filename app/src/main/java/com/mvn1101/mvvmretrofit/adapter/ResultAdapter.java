@@ -90,6 +90,8 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
                         Result result = results.get(position);
                         Intent intent = new Intent(context, MovieDetailsActivity.class);
                         intent.putExtra("movieDetails", result);
+//                        Result result2 = intent.getParcelableExtra("movieDetails");
+//                        Toast.makeText(context, result2.getImdbid(), Toast.LENGTH_SHORT).show();
                         context.startActivity(intent);
                     }
 
