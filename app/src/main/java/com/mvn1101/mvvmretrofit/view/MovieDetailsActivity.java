@@ -19,24 +19,14 @@ public class MovieDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
-        Bundle arguments =getIntent().getExtras();
-        result = (Result) arguments.getSerializable("movieDetails");
+        Bundle arguments = getIntent().getExtras();
 
-//        if (intent != null && intent.hasExtra("movieDetails")) {
-//        if (intent == null) {
 
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-//                result = intent.getParcelableExtra("movieDetails", Result.class);
-//            }
-        Toast.makeText(this, result.getImdbid(), Toast.LENGTH_LONG).show();
-//            String s = intent.getStringExtra("movieDetails");
-//            Toast.makeText(this, s , Toast.LENGTH_LONG).show();
-//
-//            Toast.makeText(this, "Intent null", Toast.LENGTH_LONG).show();
+        if (arguments != null) {
+            result = (Result) arguments.getSerializable("movieDetails");
+            Toast.makeText(this, result.getTitle(), Toast.LENGTH_LONG).show();
+        }
 
-//        } else {
-//            Toast.makeText(this, "Intent not null", Toast.LENGTH_LONG).show();
-//        }
     }
 
 
