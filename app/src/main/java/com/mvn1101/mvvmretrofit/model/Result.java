@@ -1,8 +1,5 @@
 package com.mvn1101.mvvmretrofit.model;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -35,32 +32,6 @@ public class Result implements Serializable {
     @SerializedName("type")
     @Expose
     private String type;
-//    public final static Creator<Result> CREATOR = new Creator<Result>() {
-//
-//
-//        public Result createFromParcel(Parcel in) {
-//            return new Result(in);
-//        }
-//
-//        public Result[] newArray(int size) {
-//            return (new Result[size]);
-//        }
-//
-//    };
-//
-//    @SuppressWarnings({
-//            "unchecked"
-//    })
-//    protected Result(Parcel in) {
-//        this.imdbid = in.readString();
-//        this.imdbRating = in.readDouble();
-//        this.released = in.readInt();
-//        this.synopsis = in.readString();
-//        this.title = in.readString();
-//        this.type = in.readString();
-////        this.genre = in.readArrayList(java.lang.String.class.getClassLoader());
-////        in.readList(this.imageurl, (java.lang.String.class.getClassLoader()));
-//    }
 
     public Result() {
     }
@@ -128,20 +99,5 @@ public class Result implements Serializable {
     public void setType(String type) {
         this.type = type;
     }
-
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeList(genre);
-//        dest.writeList(imageurl);
-//        dest.writeValue(imdbid);
-//        dest.writeValue(imdbRating);
-//        dest.writeValue(released);
-//        dest.writeValue(synopsis);
-//        dest.writeValue(title);
-//        dest.writeValue(type);
-//    }
-//
-//    public int describeContents() {
-//        return 0;
-//    }
 
 }
