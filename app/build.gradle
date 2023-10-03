@@ -42,4 +42,11 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.github.bumptech.glide:glide:4.15.1'
 
+    def lifecycle_version = "2.6.2"
+    implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata:$lifecycle_version"
+
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
 }
