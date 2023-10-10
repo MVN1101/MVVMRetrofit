@@ -26,27 +26,26 @@ public class MovieDetailsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_movie_details);
 
         posterImageView = findViewById(R.id.posterImageView);
-        posterPath = "https://m.media-amazon.com/images/M/MV5BNzY3YTUwYTQtNjkwNy00OTAyLWE0OWEtYmE3MGIyOWZkODY1XkEyXkFqcGdeQXVyMjkyNzYwMTc@._V1_UX182_CR0,0,182,268_AL_.jpg";
+        posterPath = "https://img10.joyreactor.cc/pics/post/anon-5573344.png";
 
 
         titleTextView = findViewById(R.id.titleTextView);
         genreTextView = findViewById(R.id.genreTextView);
         synopsisTextView = findViewById(R.id.synopsisTextView);
 
-
-
-
         Bundle arguments = getIntent().getExtras();
 
         if (arguments != null) {
             result = (Result) arguments.getSerializable("movieDetails");
-            Toast.makeText(this, result.getTitle(), Toast.LENGTH_LONG).show();
-            posterPath = result.getImageurl().get(0);
 
-            Glide.with(this)
-                    .load(posterPath)
-                    .placeholder(R.drawable.progress_circle)
-                    .into(posterImageView);
+            if (result.getImageurl().size() != 0) {
+                posterPath = result.getImageurl().get(0);
+
+                Glide.with(this)
+                        .load(posterPath)
+                        .placeholder(R.drawable.progress_circle)
+                        .into(posterImageView);
+            }
 
             titleTextView.setText(result.getTitle());
             genreTextView.setText(result.getGenre().get(0));
