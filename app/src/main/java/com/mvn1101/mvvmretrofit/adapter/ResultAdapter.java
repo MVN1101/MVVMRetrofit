@@ -46,7 +46,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
         String imagePath;
         if (results.get(position).getImageurl().size() <= 0) {
 
-            imagePath = "https://m.media-amazon.com/images/M/MV5BNzY3YTUwYTQtNjkwNy00OTAyLWE0OWEtYmE3MGIyOWZkODY1XkEyXkFqcGdeQXVyMjkyNzYwMTc@._V1_UX182_CR0,0,182,268_AL_.jpg";
+            imagePath = "https://img10.joyreactor.cc/pics/post/anon-5573344.png";
         } else {
             imagePath = results.get(position).getImageurl().get(0);
         }
@@ -55,9 +55,6 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
                 .load(imagePath)
                 .placeholder(R.drawable.progress_circle)
                 .into(holder.movieImageView);
-
-
-
     }
 
     @Override
@@ -90,11 +87,8 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
                         Result result = results.get(position);
                         Intent intent = new Intent(context, MovieDetailsActivity.class);
                         intent.putExtra("movieDetails", result);
-//                        Result result2 = intent.getParcelableExtra("movieDetails");
-//                        Toast.makeText(context, result2.getImdbid(), Toast.LENGTH_SHORT).show();
                         context.startActivity(intent);
                     }
-
                 }
             });
         }

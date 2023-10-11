@@ -2,7 +2,6 @@ package com.mvn1101.mvvmretrofit.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -11,23 +10,14 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.telecom.Conference;
-import android.widget.ArrayAdapter;
 
 import com.mvn1101.mvvmretrofit.R;
 import com.mvn1101.mvvmretrofit.adapter.ResultAdapter;
-import com.mvn1101.mvvmretrofit.model.MovieApiResponse;
 import com.mvn1101.mvvmretrofit.model.Result;
-import com.mvn1101.mvvmretrofit.service.MovieApiService;
-import com.mvn1101.mvvmretrofit.service.RetrofitInstance;
 import com.mvn1101.mvvmretrofit.viewmodel.MainActivityViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         getMovies();
 
         swipeRefreshLayout = findViewById(R.id.swiperefresh);
-        swipeRefreshLayout.setColorSchemeResources(R.color.purple_700);
+        swipeRefreshLayout.setColorSchemeResources(R.color.grey_dark);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

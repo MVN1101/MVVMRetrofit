@@ -44,7 +44,6 @@ public class MovieRepository {
                     results = (ArrayList<Result>) movieApiResponse.getResults();
                     mutableLiveData.setValue(results);
                 }
-
             }
 
             @Override
